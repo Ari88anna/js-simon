@@ -1,0 +1,21 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'New Tegomin', serif;
+}
+
+#container {
+    width: 100%;
+    text-align: center;
+}
+
+#number-list {
+    list-style-type: none;
+    font-size: 20px;
+
+}

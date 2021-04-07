@@ -59,7 +59,8 @@ setTimeout (function() {
 
     for ( var n = 0; n < userFindNumber.length; n++) {
         document.getElementById('number-list').innerHTML += '<li>' + userFindNumber[n] + '</li>'
-    }       
+    }   
+    
 
 }, 2000);
 
