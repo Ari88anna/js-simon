@@ -28,23 +28,55 @@ alert(arrayRandomNumber);
 
 setTimeout (function() {
 
+    alert('Inserisci uno alla volta i numeri che hai visto precedentemente');
+
     var arrayUserNumber = [];
-    alert('Inserisci uno alla volta i numeri che hai visto precedentemente')
+
+    var userFindNumber =[];
+
     for ( var j = 0; j < 5; j++) {
-        var userNumber = parseInt(prompt('dammi un numero')) 
+
+        var userNumber = parseInt(prompt('dammi un numero') );
+
         arrayUserNumber.push(userNumber);  
-        console.log(arrayUserNumber)      
-    }    
+        console.log(arrayUserNumber); 
+
+        // 3.confronto numeri casuali e numeri inseriti
+        // controllo se il numero inserito dall'utente è incluso nell'arrayRandomNumber
+        if (arrayRandomNumber.includes(userNumber) ) {
+
+            userFindNumber.push(userNumber);
+        } 
+          
+    }
     
-}, 5000);
+    console.log( 'numeri indovinati', userFindNumber)
+
+    // 4. stampo il risultato : quanti e quali numeri sono stati individuati
+
+    var userCount = userFindNumber.length;
+    document.getElementById('number').innerHTML ='hai trovato ' +  userCount + ' numeri esatti';
+
+    for ( var n = 0; n < userFindNumber.length; n++) {
+        document.getElementById('number-list').innerHTML += '<li>' + userFindNumber[n] + '</li>'
+    }       
+
+}, 2000);
 
 
 
-// 3.confronto numeri casuali e numeri inseriti
-for ( var i = 0; i < arrayUserNumber; i++) {
-
-}
 
 
-// 4. stampo il risultato : quanti e quali numeri sono stati individuati
+
+
+    
+
+
+
+
+
+
+
+
+
 
