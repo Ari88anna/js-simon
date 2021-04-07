@@ -8,11 +8,13 @@
 // creo una variabile array vuoto che verrà popolato da numeri casuali generati
 var arrayRandomNumber = [];
 
+
 // popolo l'array attraverso un ciclo for e la funzione .push
 
 for ( var i = 0; i < 5; i++) {
-    var numeroRandom = Math.floor(Math.random() * 6); 
+    var numeroRandom = Math.floor(Math.random() * 20) +1; 
     arrayRandomNumber.push(numeroRandom);
+    console.log(arrayRandomNumber[i])
 }
 // creo un alert a cui passo la variabile arrayRandomNumber. 
 alert(arrayRandomNumber);
@@ -24,14 +26,12 @@ alert(arrayRandomNumber);
 // avrò bisogno di un ciclo per reiterare il prompt
 // dovrò inserire i numeri dell'utente all'interno di un array vuoto con la funzione .push
 
-
-
 setTimeout (function() {
 
     var arrayUserNumber = [];
-
+    alert('Inserisci uno alla volta i numeri che hai visto precedentemente')
     for ( var j = 0; j < 5; j++) {
-        var userNumber = parseInt(prompt('Inserisci uno alla volta i numeri che hai visto precedentemente')) 
+        var userNumber = parseInt(prompt('dammi un numero')) 
         arrayUserNumber.push(userNumber);  
         console.log(arrayUserNumber)      
     }    
@@ -41,6 +41,10 @@ setTimeout (function() {
 
 
 // 3.confronto numeri casuali e numeri inseriti
+for ( var i = 0; i < arrayUserNumber; i++) {
+
+}
+
 
 // 4. stampo il risultato : quanti e quali numeri sono stati individuati
 
