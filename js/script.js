@@ -24,17 +24,19 @@ alert(arrayRandomNumber);
 // avrò bisogno di un ciclo per reiterare il prompt
 // dovrò inserire i numeri dell'utente all'interno di un array vuoto con la funzione .push
 
-setTimeout(askNumber, 5000);
 
-function askNumber() {
+
+setTimeout (function() {
+
     var arrayUserNumber = [];
 
     for ( var j = 0; j < 5; j++) {
         var userNumber = parseInt(prompt('Inserisci uno alla volta i numeri che hai visto precedentemente')) 
-        arrayUserNumber.push(userNumber);
-        console.log(arrayUserNumber)
-    }
-}
+        arrayUserNumber.push(userNumber);  
+        console.log(arrayUserNumber)      
+    }    
+    
+}, 5000);
 
 
 
