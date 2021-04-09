@@ -11,11 +11,20 @@ var arrayRandomNumber = [];
 
 // popolo l'array attraverso un ciclo for e la funzione .push
 
-for ( var i = 0; i < 5; i++) {
-    var numeroRandom = Math.floor(Math.random() * 20) +1; 
-    arrayRandomNumber.push(numeroRandom);
-    console.log(arrayRandomNumber[i])
+while ( arrayRandomNumber.length < 5 ) {
+    var numeroRandom = getRandomInt(1, 10)
+   
+    if (arrayRandomNumber.includes(numeroRandom) == false ) {
+        arrayRandomNumber.push(numeroRandom);
+    }
 }
+console.log(arrayRandomNumber)
+
+// for ( var i = 0; i < 5; i++) {
+//     var numeroRandom = Math.floor(Math.random() * 20) +1; 
+//     arrayRandomNumber.push(numeroRandom);
+//     console.log(arrayRandomNumber[i])
+// }
 // creo un alert a cui passo la variabile arrayRandomNumber. 
 alert(arrayRandomNumber);
 
@@ -31,24 +40,29 @@ setTimeout (function() {
     alert('Inserisci uno alla volta i numeri che hai visto precedentemente');
 
     var arrayUserNumber = [];
-
-    var userFindNumber =[];
-
-    for ( var j = 0; j < 5; j++) {
+    
+    while (arrayUserNumber.length < 5 ) {
 
         var userNumber = parseInt(prompt('dammi un numero') );
 
-        arrayUserNumber.push(userNumber);  
-        console.log(arrayUserNumber); 
+        if (arrayUserNumber.includes(userNumber) == false ) {
+
+            arrayUserNumber.push(userNumber);
+        }
+    }        
+
+    var userFindNumber =[];
 
         // 3.confronto numeri casuali e numeri inseriti
         // controllo se il numero inserito dall'utente è incluso nell'arrayRandomNumber
-        if (arrayRandomNumber.includes(userNumber) ) {
+    for ( var i = 0; i < arrayUserNumber.length; i++ ) {
+        var thisUserNumber = arrayUserNumber[i];
 
-            userFindNumber.push(userNumber);
-        } 
-          
-    }
+        if (arrayRandomNumber.includes(thisUserNumber) == true ) {
+
+            userFindNumber.push(thisUserNumber);
+        }
+    }   
     
     console.log( 'numeri indovinati', userFindNumber)
 
@@ -59,11 +73,15 @@ setTimeout (function() {
 
     for ( var n = 0; n < userFindNumber.length; n++) {
         document.getElementById('number-list').innerHTML += '<li>' + userFindNumber[n] + '</li>'
-    }   
-    
+    }    
 
 }, 2000);
 
+//FUNZIONI
+//funzione per generare un numero random
+function getRandomInt(min, max) {    
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 
 
 
